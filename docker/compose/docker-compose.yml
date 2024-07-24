@@ -4,8 +4,6 @@ services:
   universodomedo:
     container_name: dev-udm
     build: .
-    environtment:
-      NODE_ENV: production
     networks:
       wireguard:
         ipv4_address: 10.1.1.115
