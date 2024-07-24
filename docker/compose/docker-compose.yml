@@ -6,10 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: vite-app
-    ports:
-      - "80:5173"
     volumes:
-      - .:/app
+      - ~/docker/volumes/dev-udm:/app
     command: npm run dev
     environment:
       - NODE_ENV=development
