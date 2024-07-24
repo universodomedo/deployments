@@ -4,3 +4,9 @@ services:
   universodomedo:
     container_name: dev-udm
     build: .
+    networks:
+      wireguard:
+        ipv4_address: 10.1.1.115
+networks:
+  wireguard:
+    external: true
