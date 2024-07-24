@@ -10,7 +10,7 @@ COPY package*.json ./
 # Install the project dependencies
 RUN npm install
 RUN npm install -g typescript
-
+RUN npm install -g vite
 # Copy the rest of the application code to the container
 COPY . .
 
@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 5173
 
 # Define the command to run the application
-CMD ["npm", "run", "dev", "--host"]
+CMD ["npm", "run", "prod"]
