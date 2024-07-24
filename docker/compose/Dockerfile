@@ -14,11 +14,8 @@ RUN npm install -g typescript
 # Copy the rest of the application code to the container
 COPY . .
 
-# Build the TypeScript code
-RUN npm run build
-
 # Expose the port on which the Vite development server will run
 EXPOSE 5173
 
 # Define the command to run the application
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "dev", "--host"]
