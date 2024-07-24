@@ -10,5 +10,5 @@ services:
       wireguard:
         ipv4_address: 10.1.1.115
 networks:
-  wireguards:
-    external:true
+  wireguard:
+    external: true
