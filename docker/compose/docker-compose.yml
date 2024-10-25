@@ -8,6 +8,7 @@ services:
     networks:
       wireguard:
         ipv4_address: 10.1.1.110
+    restart: always
 networks:
   wireguard:
     external: true
