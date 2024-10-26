@@ -1,5 +1,5 @@
 services:
-  nora-api:
+  galadriel:
     container_name: galadriel
     build: .
     environment:
