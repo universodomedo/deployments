@@ -1,13 +1,12 @@
-version: '3'
 services:
   nora-api:
-    container_name: nora-api
+    container_name: galadriel
     build: .
     environment:
       NODE_ENV: production
     networks:
       wireguard:
-        ipv4_address: 10.1.1.110
+        ipv4_address: 10.1.1.118
 networks:
   wireguard:
     external: true
