@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   universodomedo:
-    container_name: dev-udm
+    container_name: sandbox-udm
     build: .
     networks:
       wireguard:
-        ipv4_address: 10.1.1.115
+        ipv4_address: 10.1.1.116
 networks:
   wireguard:
     external: true
