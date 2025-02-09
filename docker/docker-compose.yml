@@ -1,5 +1,5 @@
 services:
-  universodomedo:
+  sandbox-universodomedo:
     container_name: sandbox-udm
     build: .
     networks:
