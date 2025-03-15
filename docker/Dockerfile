@@ -9,12 +9,9 @@ COPY package*.json ./
 
 # Install app dependencies
 RUN npm install
-
+RUN npm run 
 # Copy the rest of the app's source code
 COPY . .
-
-# Build the app
-RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3100
