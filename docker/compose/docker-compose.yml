@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   universodomedo:
     container_name: dev-udm
