@@ -3,6 +3,8 @@ services:
   nora-api:
     container_name: dev-nora-api
     build: .
+    env_file:
+      -.env
     environment:
       NODE_ENV: production
     networks:
