@@ -3,10 +3,6 @@ services:
   nora-api:
     container_name: dev-nora-api
     build: .
-    env_file:
-      -.env
-    environment:
-      NODE_ENV: production
     networks:
       wireguard:
         ipv4_address: 10.1.1.113
