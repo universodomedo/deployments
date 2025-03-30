@@ -4,6 +4,8 @@ services:
     container_name: dev-nora-api
     build: .
     networks:
+    volumes:
+      - ~/docker/volumes/udm-fileserver/uploads:/usr/src/assets
       wireguard:
         ipv4_address: 10.1.1.113
     restart: always
