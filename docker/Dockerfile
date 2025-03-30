@@ -2,7 +2,7 @@
 FROM node:22.14
 
 # Create and change to the app directory
-WORKDIR /usr/src/
+WORKDIR /usr/
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
