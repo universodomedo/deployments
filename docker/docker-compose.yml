@@ -1,7 +1,7 @@
 version: '3'
 services:
   nora-api:
-    container_name: dev-nora-api
+    container_name: nora-api
     build: .
     volumes:
       - ~/docker/volumes/udm-fileserver/uploads:/usr/uploads
