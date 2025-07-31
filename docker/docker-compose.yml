@@ -1,7 +1,7 @@
 version: '3'
 services:
-  nora-api:
-    container_name: nora-api
+  dev-nora-api:
+    container_name: dev-nora-api
     build: .
     volumes:
       - ~/docker/volumes/udm-fileserver/uploads:/usr/uploads
@@ -9,7 +9,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
     networks:
       wireguard:
-        ipv4_address: 10.1.1.113
+        ipv4_address: 10.1.1.114
     restart: always
     environment:
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
