@@ -12,6 +12,7 @@ services:
         ipv4_address: 10.1.1.113
     restart: always
     environment:
+    #comment
       - TZ=America/Sao_Paulo
       DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
       DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
