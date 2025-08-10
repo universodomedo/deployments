@@ -3,6 +3,9 @@ services:
   nora-api:
     container_name: nora-api
     build: .
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
     volumes:
       - ~/docker/volumes/udm-fileserver/uploads:/usr/uploads
       - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
