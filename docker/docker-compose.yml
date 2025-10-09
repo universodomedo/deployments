@@ -12,7 +12,6 @@ services:
       - /etc/timezone:/etc/timezone:ro
     networks:
       wireguard:
-        ipv4_address: 10.1.1.113
     restart: always
     environment:
     #comment
