@@ -2,8 +2,19 @@ services:
   universodomedo:
     container_name: universodomedo
     build: .
+    volumes:
+      - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
+      - /etc/timezone:/etc/timezone:ro
     networks:
       wireguard:
+    restart: always
+    environment:
+    #comment
+      TZ: America/Sao_Paulo
+      NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL}
+      NEXT_PUBLIC_ENV: ${NEXT_PUBLIC_ENT}
+      NEXT_PUBLIC_WEBSOCKET_URL: ${NEXT_PUBLIC_WEBSOCKET_URL}
+      NEXT_PUBLIC_IMAGE_API_URL: ${secrets.NEXT_PUBLIC_IMAGE_API_URL}
 networks:
   wireguard:
     external: true
