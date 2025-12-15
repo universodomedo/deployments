@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM node:18.18
+FROM node:22.14
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
@@ -9,13 +9,11 @@ COPY package*.json ./
 
 # Install the project dependencies
 RUN npm install
-RUN npm install -g typescript
-RUN npm install -g vite
 # Copy the rest of the application code to the container
 COPY . .
 
 # Expose the port on which the Vite development server will run
-EXPOSE 5173
+EXPOSE 3000
 
 # Define the command to run the application
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "dev"]
