@@ -7,7 +7,7 @@ services:
       logging: "promtail"
       logging_jobname: "containerlogs"
     volumes:
-      - ~/docker/volumes/udm-fileserver/uploads:/data/uploads
+      - /home/ubuntu/docker/volumes/udm-fileserver/uploads:/data/uploads
       - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
       - /etc/timezone:/etc/timezone:ro
     networks:
