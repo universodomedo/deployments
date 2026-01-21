@@ -1,13 +1,12 @@
-version: '3'
 services:
-  nora-api:
-    container_name: nora-api
+  homog-nora-api:
+    container_name: homog-nora-api
     build: .
     labels:
       logging: "promtail"
       logging_jobname: "containerlogs"
     volumes:
-      - /home/ubuntu/docker/volumes/udm-fileserver/uploads:/data/uploads
+      - /home/ubuntu/docker/volumes/udm-fileserver/uploads:/data/uploads:ro
       - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
       - /etc/timezone:/etc/timezone:ro
     networks:
