@@ -39,6 +39,7 @@ services:
       SECURE: ${SECURE}
       SAME_SITE: ${SAME_SITE}
       CREDENTIALS: ${CREDENTIALS}
+      CLOUD: ${CLOUD}
 networks:
   wireguard:
     external: true
