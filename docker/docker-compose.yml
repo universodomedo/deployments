@@ -2,6 +2,9 @@ services:
   universodomedo:
     container_name: universodomedo
     build: .
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
     volumes:
       - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
       - /etc/timezone:/etc/timezone:ro
