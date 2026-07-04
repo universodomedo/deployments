@@ -8,6 +8,7 @@ services:
       logging_jobname: "containerlogs"
     volumes:
       - /home/ubuntu/docker/volumes/udm-fileserver/uploads:/data/uploads
+      - /home/ubuntu/docker/volumes/nora-api/secrets:/secrets:ro
       - /etc/localtime:/etc/localtime:ro   # Sync timezone with host
       - /etc/timezone:/etc/timezone:ro
     networks:
