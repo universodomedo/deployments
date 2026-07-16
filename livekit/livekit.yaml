@@ -1,0 +1,30 @@
+port: 7880
+
+rtc:
+  tcp_port: 7881
+  # Deliberately below 32768: on Linux the ephemeral port range defaults to
+  # 32768-60999, which fully overlaps the commonly-recommended 50000-60000
+  # and causes intermittent "address already in use" failures from unrelated
+  # local processes grabbing a port inside it first. Widen this range (still
+  # staying under 32768, or reserve the range via
+  # net.ipv4.ip_local_port_range) if you need more concurrent connections.
+  port_range_start: 20000
+  port_range_end: 20099
+  # Advertise this host's real public IP (auto-detected via STUN) in ICE
+  # candidates instead of the container's private Docker IP. Needed for
+  # clients outside the Docker host to actually reach the media ports.
+  use_external_ip: true
+
+# Keys are intentionally NOT hardcoded here — supplied at runtime via the
+# LIVEKIT_KEYS env var (see .env.example / docker-compose.yml env_file).
+
+# TURN relay is intentionally left disabled for the first pass — direct UDP
+# plus the tcp_port fallback above covers most networks. If some users
+# report audio never connecting (common on locked-down corporate/school
+# Wi-Fi), enable it — see README.md "Adding TURN later".
+# turn:
+#   enabled: true
+#   udp_port: 3478
+#   tls_port: 5349
+#   domain: turn.yourdomain.com
+#   external_tls: true
